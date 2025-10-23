@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Embed wix.com (iframe demo)</title>
+    <style>
+      html,body{height:100%;margin:0;font-family:Segoe UI,Roboto,Arial,sans-serif}
+      .container{display:flex;flex-direction:column;height:100%}
+      header{padding:12px 16px;background:#111;color:#fff}
+      main{flex:1;display:flex;align-items:stretch}
+      .frame-wrap{flex:1;position:relative;background:#f3f3f3}
+      iframe{width:100%;height:100%;border:0}
+      .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(255,255,255,0.95);gap:12px;flex-direction:column}
+      .hidden{display:none}
+      .notice{max-width:760px;text-align:center}
+      a.button{display:inline-block;padding:10px 14px;background:#0067b8;color:#fff;border-radius:6px;text-decoration:none}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <strong>Embed wix.com demo</strong>
+      </header>
+      <main>
+        <div class="frame-wrap">
+          <!-- The iframe attempts to load https://www.wix.com. Many large sites disallow embedding with X-Frame-Options or CSP. -->
+          <iframe id="targetFrame" src="https://www.wix.com" title="Wix website preview"></iframe>
+
+          <!-- Removed intrusive fallback popup per user request. Keep a small direct link below the iframe instead. -->
+        </div>
+      </main>
+      <footer style="padding:10px 16px;font-size:13px;color:#444;background:#fafafa;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+        <div>Note: Successful embedding depends on the remote site's security headers.</div>
+        <div><a class="button" href="https://www.wix.com" target="_blank" rel="noopener">Open wix.com</a></div>
+      </footer>
+    </div>
+
+    <script>
+      // No intrusive fallback detection — user requested no popup. Keep the iframe and a simple footer link instead.
+    </script>
+  </body>
+  </html>
